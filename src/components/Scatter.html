@@ -1,0 +1,25 @@
+<script>
+export default {
+	data () {
+		return {
+			r: 5
+		};
+	},
+	methods: {
+		draw () {
+			const { ctx, r } = this.get();
+			const { xScale, yScale, x, y, data } = this.store.get();
+
+			data.forEach(d => {
+				ctx.beginPath();
+				ctx.arc(xScale(x(d)), yScale(y(d)), r, 0, 2 * Math.PI, false);
+				ctx.fillStyle = '#000';
+				ctx.fill();
+				// ctx.lineWidth = 5;
+				// ctx.strokeStyle = '#003300';
+				// ctx.stroke();
+			});
+		}
+	}
+};
+</script>

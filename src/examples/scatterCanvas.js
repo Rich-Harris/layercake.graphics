@@ -1,8 +1,7 @@
 import LayerCake from 'layercake';
 import points from '../data/points.js';
 
-import Line from '../components/Line.html';
-import Area from '../components/Area.html';
+import Scatter from '../components/Scatter.html';
 import AxisX from '../components/AxisX.html';
 import AxisY from '../components/AxisY.html';
 
@@ -12,13 +11,14 @@ const myCake = new LayerCake({
 	y: d => d['myY'],
 	yDomain: [0, null],
 	data: points,
-	target: document.getElementById('chart-target')
+	target: document.getElementById('chart-target-scatter-canvas')
 })
 	.svgLayers([
 		{ component: AxisX, opts: {} },
-		{ component: AxisY, opts: {} },
-		{ component: Line, opts: {} },
-		{ component: Area, opts: {} }
+		{ component: AxisY, opts: {} }
+	])
+	.canvasLayers([
+		{ component: Scatter, opts: {a: 'hey'} }
 	]);
 
 // console.log(myCake.get());
