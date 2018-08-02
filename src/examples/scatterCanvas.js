@@ -5,13 +5,20 @@ import Scatter from '../components/Scatter.html';
 import AxisX from '../components/AxisX.html';
 import AxisY from '../components/AxisY.html';
 
+const r = 5;
+
 const myCake = new LayerCake({
 	padding: { top: 0, right: 0, bottom: 20, left: 25 },
 	x: 'myX',
-	y: d => d['myY'],
+	y: 'myY',
 	yDomain: [0, null],
+	xPadding: [r, r],
+	yPadding: [0, r],
 	data: points,
-	target: document.getElementById('chart-target-scatter-canvas')
+	target: document.getElementById('chart-target-scatter-canvas'),
+	custom: {
+		r
+	}
 })
 	.svgLayers([
 		{ component: AxisX, opts: {} },

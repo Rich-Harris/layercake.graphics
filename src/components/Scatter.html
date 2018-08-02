@@ -1,20 +1,14 @@
 <script>
 import { scaleCanvas } from 'LayerCake';
 export default {
-	data () {
-		return {
-			r: 5
-		};
-	},
-
 	/* --------------------------------------------
 	 * Put our canvas drawing functions inside of onstate
 	 * which will change on first load and whenever
 	 * the store update fires
 	 */
 	onstate () {
-		const { canvas, ctx, r } = this.get();
-		const { width, height, xScale, yScale, x, y, data } = this.store.get();
+		const { canvas, ctx } = this.get();
+		const { width, height, xScale, yScale, x, y, data, custom } = this.store.get();
 
 		/* --------------------------------------------
 		 * If you were to have multiple canvas layers
@@ -30,7 +24,7 @@ export default {
 		 */
 		data.forEach(d => {
 			ctx.beginPath();
-			ctx.arc(xScale(x(d)), yScale(y(d)), r, 0, 2 * Math.PI, false);
+			ctx.arc(xScale(x(d)), yScale(y(d)), custom.r, 0, 2 * Math.PI, false);
 			ctx.fillStyle = '#000';
 			ctx.fill();
 		});
