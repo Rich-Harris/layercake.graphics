@@ -15,8 +15,8 @@ import * as geo from 'd3-geo';
 export default {
 	namespace: 'svg',
 	computed: {
-		projection: ({ $width, $height, $data }) => {
-			return geo.geoAlbersUsa()
+		projection: ({ $width, $height, $data, $custom }) => {
+			return geo[$custom.projection]()
 				.fitSize([$width, $height], $data);
 		},
 		geoPath: ({ projection }) => {

@@ -7,7 +7,10 @@ import SvgMap from '../components/SvgMap.html';
 
 	const myCake = new LayerCake({
 		data: geojson,
-		target: document.getElementById('chart-target-svg-map')
+		target: document.getElementById('chart-target-svg-map'),
+		custom: {
+			projection: 'geoAlbersUsa' // define the d3.geo projection name here to make our SvgMap component more reusable
+		}
 	})
 		.svgLayers([
 			{ component: SvgMap, opts: {} }
