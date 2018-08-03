@@ -1,3 +1,9 @@
+/* --------------------------------------------
+ *
+ * Scatterplot example using canvas
+ *
+ * --------------------------------------------
+ */
 import LayerCake from 'layercake';
 import points from '../data/points.js';
 

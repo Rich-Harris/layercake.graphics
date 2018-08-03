@@ -1,3 +1,9 @@
+/* --------------------------------------------
+ *
+ * Simple line and axis example
+ *
+ * --------------------------------------------
+ */
 import LayerCake from 'layercake';
 import points from '../data/points.js';
 

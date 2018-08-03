@@ -1,3 +1,11 @@
+/* --------------------------------------------
+ *
+ * Example creating an svg map, computing projection values inside the component
+ * passing in the name of the projection
+ *
+ * --------------------------------------------
+ */
+
 import LayerCake from 'layercake';
 import loadData from '../modules/loadData.js';
 import SvgMap from '../components/SvgMap.html';
